@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class NumberGuesser {
     public static void main(String[] args) {
         do {
@@ -10,6 +11,7 @@ public class NumberGuesser {
         int guess = 50;
         int high = 100;
         int low = 0;
+        
         System.out.println("Guess a number between 1 and 100.");
         char response = getUserResponseToGuess(guess);
         while (response != 'c') {
@@ -25,6 +27,7 @@ public class NumberGuesser {
             response = getUserResponseToGuess(guess);
         }
     }
+    
     public static boolean shouldPlayAgain() {
         String response;
         boolean again = false;
@@ -36,12 +39,14 @@ public class NumberGuesser {
         }
         return again;
     }
+    
     public static char getUserResponseToGuess(int guess) {
         Scanner keyboard = new Scanner(System.in);
         System.out.print("Is it " + guess + "?  (h/l/c): ");
         char response = keyboard.next().charAt(0);
         return response;
     }
+    
     public static int getMidpoint(int low, int high) {
         int guess = (low + high) / 2;
         return guess;
